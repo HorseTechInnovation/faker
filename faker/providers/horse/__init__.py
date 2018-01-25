@@ -14,11 +14,30 @@ class Provider(BaseProvider):
     This provider is a collection of functions to generate personal profiles and identities.
 
     """
+    # standard settings - may be modified by country
+    '''
+        Horse Seix
+        Many male horses are gelded/neutered, so the code for sex includes this option.  Rarely a female horse can also be neutered. 
+    '''
+
+    SEX = {
+        00 : "Not Known",
+        10 : "Male", # entire/neutered not known
+        11 : "Stallion", # entire
+        12 : "Gelding",
+        20 : "Female", # neutered not known
+        21 : "Mare",
+        22 : "Neutered female",
+        30 : "Hermaphrodite",
+    }
+    # TODO: extend range of colours
+    COLORS = ["bay", "chestnut", "black", "grey"]
 
     pios = {}
     pios_distribution = {}
     population = []
     population_distribution = []
+    handles = []
 
     def __init__(self, object):
 
@@ -33,9 +52,8 @@ class Provider(BaseProvider):
             # country,iso3166,population,pct_registered,confidence in pct_reg,source of pct_reg,pick_pct
             items = csv.DictReader(csvfile, delimiter=',')
             for item in items:
-                    self.population.append(item['iso3166'])
-
-                    self.population_distribution.append(int(item['pick_pct']))
+                self.population.append(item['iso3166'])
+                self.population_distribution.append(int(item['pick_pct']))
 
         # get list of pios by country and numbers per org
         csv_file = os.path.join(dir_path, 'data/PIOs.csv')
@@ -51,18 +69,30 @@ class Provider(BaseProvider):
                     self.pios[item['country']] = [item['org_id'],]
                     self.pios_distribution[item['country']] = [int(item['num_reg']),]
 
+        csv_file = os.path.join(dir_path,'data/horse_handles.csv' )
+        with open(csv_file, 'rt') as csvfile:
+            # one name per line
+            items = csv.reader(csvfile, )
+            for item in items:
+                self.handles.append(item[0])
+
+
     #list(set(seq))
-    def simple_horse(self, sex=None):
+    def simple_horse(self):
         """
         Generates a basic profile with horse informations
+
         """
-        SEX = ["Stallion", "Gelding", "Mare"]
-        if sex not in SEX:
-            sex = choice_distribution(SEX, (0.02, 0.49, 0.49))
-        if sex == 'Mare':
+        sex = self.generator.horse_sex()
+
+
+        # TODO: generate horse names
+        if sex >= 20:
             name = self.generator.name_female()
         else:
             name = self.generator.name_male()
+
+        country = self.generator.country_of_birth()
 
         return {
             "handle": self.generator.handle(),
@@ -71,6 +101,9 @@ class Provider(BaseProvider):
             "color": self.generator.horse_color(),
             "size": self.generator.horse_size(),
             "dob": self.generator.horse_dob(),
+            "chipid": self.generator.chipid(),
+            "country_of_birth": country,
+            "ueln": self.generator.ueln(country),
         }
 
     def horse_sex(self):
@@ -89,24 +122,34 @@ class Provider(BaseProvider):
         :return:
         '''
 
-        sex_choices = (00,10,11,12,20,21,22,30)
-        p = (0.05, 0.4, 0.05, 0.01, 0.4, 0.01, 0.01)
+        sex_choices = list(self.SEX.keys())
+        p = (0.05,0.05, 0.4, 0.05, 0.01, 0.4, 0.01, 0.01)
 
         return choice_distribution(sex_choices, p)
 
     def horse_color(self):
         #https://en.wikipedia.org/wiki/Equine_coat_color
         #http://www.animalgenetics.us/Equine/CCalculator1.asp
-        COLORS = ["bay", "chestnut", "black", "grey"]
+
         p = [0.5, 0.3, 0.1, 0.1]
 
-        return choice_distribution(COLORS, p)
+        return choice_distribution(self.COLORS, p)
 
-    def horse_size(self):
-        return "152"
+    def horse_size(self, units = 'cms'):
+        '''horses are measured in hands (4 inches per hand) or centimeters depending on country'''
+
+        #TODO: get statistics for size to better reflect population
+        #TODO: raise error if units is not cms or hands
+
+        size_in_cms = random.choice([s for s in range(101, 182)])
+        if units == 'hands':
+            hands = int(size_in_cms/2.54) + abs(size_in_cms/2.54)
+            return hands
+        else:
+            return size_in_cms
 
     def handle(self):
-        return "fred"
+        return random.choice(self.handles)
 
     def horse_dob(self):
         this_year = date.today().year
@@ -132,10 +175,8 @@ class Provider(BaseProvider):
 
 
 
-    def ueln(self):
+    def ueln(self, country):
 
-        # choose country of birth
-        country = choice_distribution(self.population, self.population_distribution)
 
         # choose breed society (PIO)
         pio = choice_distribution(self.pios[country], self.pios_distribution[country])
@@ -144,37 +185,22 @@ class Provider(BaseProvider):
         id = randint(100000, 999999999)
 
 
-        return "%s %s %s" % (country, pio, id)
+        return "%s-%s-%s" % (country, pio, id)
 
     def chipid(self):
-        return '123'
+        '''the proportion of the horse population with chips varies from country to country.
+        The default is that 50% of horses have chips
+        see: https://en.wikipedia.org/wiki/Microchip_implant_(animal)
+
+        TODO: return correct range of values'''
+
+        horse_has_chip = randint(0, 1)
+        if horse_has_chip:
+            return "%s" % randint(100000000, 999999999)
+        else:
+            return ''
 
     def country_of_birth(self):
-        return '123'
 
-    #"current_location": (self.generator.latitude(), self.generator.longitude()),
-    #
-    # def profile(self, fields=None, sex=None):
-    #     """
-    #     Generates a complete profile.
-    #     If "fields" is not empty, only the fields in the list will be returned
-    #     """
-    #     if fields is None:
-    #         fields = []
-    #
-    #     d = {
-    #         "job": self.generator.job(),
-    #         "company": self.generator.company(),
-    #         "ssn": self.generator.ssn(),
-    #         "residence": self.generator.address(),
-    #         "current_location": (self.generator.latitude(), self.generator.longitude()),
-    #         "blood_group": "".join(self.random_element(list(itertools.product(["A", "B", "AB", "0"], ["+", "-"])))),
-    #         "website": [self.generator.url() for i in range(1, self.random_int(2, 5))]
-    #     }
-    #
-    #     d = dict(d, **self.generator.simple_profile(sex))
-    #     # field selection
-    #     if len(fields) > 0:
-    #         d = dict((k, v) for (k, v) in d.items() if k in fields)
-    #
-    #     return d
+        return choice_distribution(self.population, self.population_distribution)
+

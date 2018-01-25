@@ -17,6 +17,7 @@ from faker.providers.address.en_US import Provider as EnUsProvider
 from faker.providers.address.fi_FI import Provider as FiProvider
 from faker.providers.address.ja_JP import Provider as JaProvider
 from faker.providers.address.ne_NP import Provider as NeProvider
+
 from six import string_types
 
 
@@ -446,6 +447,28 @@ class TestPtBr(unittest.TestCase):
 
         state_abbr = self.factory.state_abbr()
         assert isinstance(state_abbr, string_types)
+
+        address = self.factory.address()
+        assert isinstance(address, string_types)
+
+class TestEnIE(unittest.TestCase):
+    """ Tests in addresses in the de_DE locale """
+
+    def setUp(self):
+        self.factory = Faker('en_IE')
+
+    def test_address(self):
+        country = self.factory.country()
+        assert isinstance(country, string_types)
+
+        street = self.factory.street_name()
+        assert isinstance(street, string_types)
+
+        city = self.factory.street_address()
+        assert isinstance(city, string_types)
+
+        county = self.factory.county()
+        assert isinstance(county, string_types)
 
         address = self.factory.address()
         assert isinstance(address, string_types)
