@@ -3,7 +3,12 @@ from .. import Provider as HorseProvider
 
 class Provider(HorseProvider):
 
-    country_code = 840
+    country_codes = [840,]
+
+    def __init__(self, object):
+        country_codes = [840, ]
+        super().__init__(object)
+
 
     def country_of_birth(self):
         return 840

@@ -1,10 +1,12 @@
-from .. import Provider as ProfileProvider
+from .. import Provider as HorseProvider
+import random
 
+class Provider(HorseProvider):
 
-class Provider(ProfileProvider):
-
+    country_codes = [372,]
 
     def country_of_birth(self):
-        return 372
+        #TODO: handle multiple country codes
+        return self.country_codes[0]
 
 

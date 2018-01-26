@@ -1,250 +1,250 @@
-country,iso3166,population,pct_registered,confidence in pct_reg,source of pct_reg,pick_pct
-Afghanistan,4,171200,0.01,0,Guess,1712
-Aland Islands,248,74200,0.01,0,Guess,742
-Albania,8,31729,0.01,0,Guess,317
-Algeria,12,44991,0.01,0,Guess,449
-American Samoa,16,44991,0.01,0,Guess,449
-Andorra,20,44991,0.01,0,Guess,449
-Angola,24,1013,0.01,0,Guess,10
-Anguilla,660,0,0.01,0,Guess,0
-Antarctica,10,31729,0.01,0,Guess,317
-Antigua and Barbuda,28,493,0.01,0,Guess,4
-Argentina,32,2447582,0.01,0,Guess,24475
-Armenia,51,11402,0.01,0,Guess,114
-Aruba,533,,0.01,0,Guess,0
-Australia,36,268739,0.01,0,Guess,2687
-Austria,40,93225,0.8,0,Guess,74580
-Azerbaijan,31,71606,0.01,0,Guess,716
+country,iso3166,population,pct_registered,confidence in pct_reg,source of pct_reg,pick
+Afghanistan,4,171200,0.01,0,Guess,0
+Albania,8,31729,0.01,0,Guess,0
+Antarctica,10,31729,0.01,0,Guess,0
+Algeria,12,44991,0.01,0,Guess,0
+American Samoa,16,44991,0.01,0,Guess,0
+Andorra,20,44991,0.01,0,Guess,0
+Angola,24,1013,0.01,0,Guess,0
+Antigua and Barbuda,28,493,0.01,0,Guess,0
+Azerbaijan,31,71606,0.01,0,Guess,0
+Argentina,32,2447582,0.01,0,Guess,0
+Australia,36,268739,0.01,0,Guess,0
+Austria,40,93225,0.8,0,Guess,0
 Bahamas,44,,0.01,0,Guess,0
 Bahrain,48,,0.01,0,Guess,0
 Bangladesh,50,,0.01,0,Guess,0
-Barbados,52,1259,0.01,0,Guess,12
-Belarus,112,55800,0.01,0,Guess,558
-Belgium,56,35079,0.8,0,Guess,28063
-Belize,84,5919,0.01,0,Guess,59
-Benin,204,1019,0.01,0,Guess,10
-Bermuda,60,1012,0.01,0,Guess,10
-Bhutan,64,13914,0.01,0,Guess,139
-Bolivia,68,499403,0.01,0,Guess,4994
-Bonaire Sint Eustatius and Saba,535,,0.01,0,Guess,0
-Bosnia and Herzegovina,70,16288,0.01,0,Guess,162
-Botswana,72,34737,0.01,0,Guess,347
-Bouvet Island,74,34737,0.01,0,Guess,347
-Brazil,76,5577539,0.01,0,Guess,55775
-British Indian Ocean Territory,86,100,0.01,0,Guess,1
-Brunei Darussalam,96,152,0.01,0,Guess,1
-Bulgaria,100,53614,0.01,0,Guess,536
-Burkina Faso,854,41053,0.01,0,Guess,410
-Burundi,108,102973,0.01,0,Guess,1029
-Cabo Verde,132,559,0.01,0,Guess,5
-Cambodia,116,30025,0.01,0,Guess,300
-Cameroon,120,18007,0.01,0,Guess,180
+Armenia,51,11402,0.01,0,Guess,0
+Barbados,52,1259,0.01,0,Guess,0
+Belgium,56,35079,0.8,0,Guess,0
+Bermuda,60,1012,0.01,0,Guess,0
+Bhutan,64,13914,0.01,0,Guess,0
+Bolivia,68,499403,0.01,0,Guess,0
+Bosnia and Herzegovina,70,16288,0.01,0,Guess,0
+Botswana,72,34737,0.01,0,Guess,0
+Bouvet Island,74,34737,0.01,0,Guess,0
+Brazil,76,5577539,0.01,0,Guess,0
+Belize,84,5919,0.01,0,Guess,0
+British Indian Ocean Territory,86,100,0.01,0,Guess,0
+Solomon Islands,90,152,0.01,0,Guess,0
+Virgin Islands (British),92,152,0.01,0,Guess,0
+Brunei Darussalam,96,152,0.01,0,Guess,0
+Bulgaria,100,53614,0.01,0,Guess,0
+Myanmar,104,102973,0.01,0,Guess,0
+Burundi,108,102973,0.01,0,Guess,0
+Belarus,112,55800,0.01,0,Guess,0
+Cambodia,116,30025,0.01,0,Guess,0
+Cameroon,120,18007,0.01,0,Guess,0
 Canada,124,398802,0.8,0,Guess,319041
-Cayman Islands,136,559,0.01,0,Guess,5
-Central African Republic,140,559,0.01,0,Guess,5
-Chad,148,437566,0.01,0,Guess,4375
-Chile,152,245507,0.01,0,Guess,2455
-China,156,5910792,0.01,0,Guess,59107
-Christmas Island,162,5910792,0.01,0,Guess,59107
-Cocos (Keeling) Islands,166,5910792,0.01,0,Guess,59107
-Colombia,170,763505,0.01,0,Guess,7635
-Comoros,174,763505,0.01,0,Guess,7635
+Cabo Verde,132,559,0.01,0,Guess,0
+Cayman Islands,136,559,0.01,0,Guess,0
+Central African Republic,140,559,0.01,0,Guess,0
+Sri Lanka,144,1379,0.01,0,Guess,0
+Chad,148,437566,0.01,0,Guess,0
+Chile,152,245507,0.01,0,Guess,0
+China,156,5910792,0.01,0,Guess,0
+Taiwan Province of China,158,5910792,0.01,0,Guess,0
+Christmas Island,162,5910792,0.01,0,Guess,0
+Cocos (Keeling) Islands,166,5910792,0.01,0,Guess,0
+Colombia,170,763505,0.01,0,Guess,0
+Comoros,174,763505,0.01,0,Guess,0
+Mayotte,175,763505,0.01,0,Guess,0
 Congo,178,78,0.01,0,Guess,0
 Congo (Democratic Republic of the),180,78,0.01,0,Guess,0
-Cook Islands,184,303,0.01,0,Guess,3
-Costa Rica,188,127793,0.01,0,Guess,1277
-Côte d'Ivoire,384,388324,0.01,0,Guess,3883
-Croatia,191,22775,0.01,0,Guess,227
-Cuba,192,860800,0.01,0,Guess,8608
-Curaçao,531,139804,0.01,0,Guess,1398
-Cyprus,196,660,0.01,0,Guess,6
+Cook Islands,184,303,0.01,0,Guess,0
+Costa Rica,188,127793,0.01,0,Guess,0
+Croatia,191,22775,0.01,0,Guess,0
+Cuba,192,860800,0.01,0,Guess,0
+Cyprus,196,660,0.01,0,Guess,0
 Czechia,203,,0.01,0,Guess,0
-Denmark,208,51282,0.8,0,Guess,41025
-Djibouti,262,2200,0.01,0,Guess,22
-Dominica,212,51282,0.01,0,Guess,512
-Dominican Republic,214,358766,0.01,0,Guess,3587
-Ecuador,218,219134,0.01,0,Guess,2191
-Egypt,818,75663,0.01,0,Guess,756
-El Salvador,222,97753,0.01,0,Guess,977
-Equatorial Guinea,226,97753,0.01,0,Guess,977
-Eritrea,232,2158176,0.01,0,Guess,21581
-Estonia,233,6314,0.01,0,Guess,63
-Ethiopia,231,2158176,0.01,0,Guess,21581
-Falkland Islands (Malvinas),238,1157,0.01,0,Guess,11
-Faroe Islands,234,6314,0.01,0,Guess,63
-Fiji,242,47159,0.01,0,Guess,471
-Finland,246,74200,0.01,0,Guess,742
+Benin,204,1019,0.01,0,Guess,0
+Denmark,208,51282,0.8,0,Guess,0
+Dominica,212,51282,0.01,0,Guess,0
+Dominican Republic,214,358766,0.01,0,Guess,0
+Ecuador,218,219134,0.01,0,Guess,0
+El Salvador,222,97753,0.01,0,Guess,0
+Equatorial Guinea,226,97753,0.01,0,Guess,0
+Ethiopia,231,2158176,0.01,0,Guess,0
+Eritrea,232,2158176,0.01,0,Guess,0
+Estonia,233,6314,0.01,0,Guess,0
+Faroe Islands,234,6314,0.01,0,Guess,0
+Falkland Islands (Malvinas),238,1157,0.01,0,Guess,0
+South Georgia and the South Sandwich Islands,239,1157,0.01,0,Guess,0
+Fiji,242,47159,0.01,0,Guess,0
+Finland,246,74200,0.01,0,Guess,0
+Aland Islands,248,74200,0.01,0,Guess,0
 France,250,379554,0.8,0,Guess,303643
-French Guiana,254,950,0.01,0,Guess,9
-French Polynesia,258,2200,0.01,0,Guess,22
-French Southern Territories,260,2200,0.01,0,Guess,22
-Gabon,266,2200,0.01,0,Guess,22
-Gambia,270,8837,0.01,0,Guess,88
-Georgia,268,40032,0.01,0,Guess,400
+French Guiana,254,950,0.01,0,Guess,0
+French Polynesia,258,2200,0.01,0,Guess,0
+French Southern Territories,260,2200,0.01,0,Guess,0
+Djibouti,262,2200,0.01,0,Guess,0
+Gabon,266,2200,0.01,0,Guess,0
+Georgia,268,40032,0.01,0,Guess,0
+Gambia,270,8837,0.01,0,Guess,0
+Palestine State of,275,8837,0.01,0,Guess,0
 Germany,276,441954,0.8,0,Guess,353563
-Ghana,288,2932,0.01,0,Guess,29
-Gibraltar,292,2932,0.01,0,Guess,29
+Ghana,288,2932,0.01,0,Guess,0
+Gibraltar,292,2932,0.01,0,Guess,0
+Kiribati,296,2932,0.01,0,Guess,0
 Greece,300,27344,0.8,0,Guess,21875
-Greenland,304,152,0.01,0,Guess,1
+Greenland,304,152,0.01,0,Guess,0
 Grenada,308,30,0.01,0,Guess,0
 Guadeloupe,312,53,0.01,0,Guess,0
 Guam,316,54,0.01,0,Guess,0
-Guatemala,320,131583,0.01,0,Guess,1315
-Guernsey,831,75663,0.8,0,Guess,60530
-Guinea,324,3531,0.01,0,Guess,35
-Guinea-Bissau,624,2426,0.01,0,Guess,24
-Guyana,328,2412,0.01,0,Guess,24
-Haiti,332,503739,0.01,0,Guess,5037
-Heard Island and McDonald Islands,334,503739,0.01,0,Guess,5037
-Holy See,336,503739,0.01,0,Guess,5037
-Honduras,340,181280,0.01,0,Guess,1812
-Hong Kong,344,181280,0.01,0,Guess,1812
-Hungary,348,60000,0.8,0,Guess,48000
-Iceland,352,72000,0.01,0,Guess,720
-India,356,623325,0.01,0,Guess,6233
-Indonesia,360,437570,0.01,0,Guess,4375
-Iran (Islamic Republic of),364,131405,0.01,0,Guess,1314
-Iraq,368,49885,0.01,0,Guess,498
+Guatemala,320,131583,0.01,0,Guess,0
+Guinea,324,3531,0.01,0,Guess,0
+Guyana,328,2412,0.01,0,Guess,0
+Haiti,332,503739,0.01,0,Guess,0
+Heard Island and McDonald Islands,334,503739,0.01,0,Guess,0
+Holy See,336,503739,0.01,0,Guess,0
+Honduras,340,181280,0.01,0,Guess,0
+Hong Kong,344,181280,0.01,0,Guess,0
+Hungary,348,60000,0.8,0,Guess,0
+Iceland,352,72000,0.01,0,Guess,0
+India,356,623325,0.01,0,Guess,0
+Indonesia,360,437570,0.01,0,Guess,0
+Iran (Islamic Republic of),364,131405,0.01,0,Guess,0
+Iraq,368,49885,0.01,0,Guess,0
 Ireland,372,92200,0.8,0,Guess,73760
-Isle of Man,833,75663,0.01,0,Guess,756
-Israel,376,4000,0.01,0,Guess,40
-Italy,380,388324,0.8,0,Guess,310659
-Jamaica,388,4009,0.01,0,Guess,40
-Japan,392,14959,0.8,0,Guess,11967
-Jersey,832,75663,0.01,0,Guess,756
-Jordan,400,2249,0.01,0,Guess,22
-Kazakhstan,398,2070273,0.01,0,Guess,20702
-Kenya,404,2088,0.01,0,Guess,20
-Kiribati,296,2932,0.01,0,Guess,29
-Korea (Democratic People's Republic of),408,2088,0.01,0,Guess,20
-Korea (Republic of),410,2088,0.01,0,Guess,20
-Kuwait,414,1213,0.01,0,Guess,12
-Kyrgyzstan,417,467249,0.01,0,Guess,4672
-Lao People's Democratic Republic,418,21328,0.01,0,Guess,213
-Latvia,428,9300,0.01,0,Guess,93
-Lebanon,422,3229,0.01,0,Guess,32
-Lesotho,426,51898,0.01,0,Guess,518
-Liberia,430,9300,0.01,0,Guess,93
-Libya,434,45520,0.01,0,Guess,455
-Liechtenstein,438,266,0.01,0,Guess,2
-Lithuania,440,17321,0.01,0,Guess,173
-Luxembourg,442,4535,0.8,0,Guess,3628
-Macao,446,4535,0.01,0,Guess,45
-Macedonia (the former Yugoslav Republic of),807,305800,0.01,0,Guess,3058
-Madagascar,450,498,0.01,0,Guess,4
+Israel,376,4000,0.01,0,Guess,0
+Italy,380,388324,0.8,0,Guess,0
+Côte d'Ivoire,384,388324,0.01,0,Guess,0
+Jamaica,388,4009,0.01,0,Guess,0
+Japan,392,14959,0.8,0,Guess,0
+Kazakhstan,398,2070273,0.01,0,Guess,0
+Jordan,400,2249,0.01,0,Guess,0
+Kenya,404,2088,0.01,0,Guess,0
+Korea (Democratic People's Republic of),408,2088,0.01,0,Guess,0
+Korea (Republic of),410,2088,0.01,0,Guess,0
+Kuwait,414,1213,0.01,0,Guess,0
+Kyrgyzstan,417,467249,0.01,0,Guess,0
+Lao People's Democratic Republic,418,21328,0.01,0,Guess,0
+Lebanon,422,3229,0.01,0,Guess,0
+Lesotho,426,51898,0.01,0,Guess,0
+Latvia,428,9300,0.01,0,Guess,0
+Liberia,430,9300,0.01,0,Guess,0
+Libya,434,45520,0.01,0,Guess,0
+Liechtenstein,438,266,0.01,0,Guess,0
+Lithuania,440,17321,0.01,0,Guess,0
+Luxembourg,442,4535,0.8,0,Guess,0
+Macao,446,4535,0.01,0,Guess,0
+Madagascar,450,498,0.01,0,Guess,0
 Malawi,454,49,0.01,0,Guess,0
-Malaysia,458,3673,0.01,0,Guess,36
-Maldives,462,3673,0.01,0,Guess,36
-Mali,466,549316,0.01,0,Guess,5493
+Malaysia,458,3673,0.01,0,Guess,0
+Maldives,462,3673,0.01,0,Guess,0
+Mali,466,549316,0.01,0,Guess,0
 Malta,470,1070,0.01,0,Guess,10
-Marshall Islands,584,34958,0.01,0,Guess,349
-Martinique,474,1100,0.01,0,Guess,11
-Mauritania,478,67020,0.01,0,Guess,670
-Mauritius,480,150,0.01,0,Guess,1
-Mayotte,175,763505,0.01,0,Guess,7635
+Martinique,474,1100,0.01,0,Guess,0
+Mauritania,478,67020,0.01,0,Guess,0
+Mauritius,480,150,0.01,0,Guess,0
 Mexico,484,6378267,0.01,0,Guess,63782
-Micronesia (Federated States of),583,34958,0.01,0,Guess,349
-Moldova (Republic of),498,3635489,0.01,0,Guess,36354
-Monaco,492,6378267,0.01,0,Guess,63782
-Mongolia,496,3635489,0.01,0,Guess,36354
-Montenegro,499,4422,0.01,0,Guess,44
-Montserrat,500,4422,0.01,0,Guess,44
-Morocco,504,180000,0.01,0,Guess,1800
-Mozambique,508,180000,0.01,0,Guess,1800
-Myanmar,104,102973,0.01,0,Guess,1029
-Namibia,516,45533,0.01,0,Guess,455
-Nauru,520,45533,0.01,0,Guess,455
-Nepal,524,45533,0.01,0,Guess,455
-Netherlands,528,139804,0.8,0,Guess,111843
-New Caledonia,540,11250,0.01,0,Guess,112
-New Zealand,554,48801,0.01,0,Guess,488
-Nicaragua,558,268358,0.01,0,Guess,2683
-Niger,562,248200,0.01,0,Guess,2482
-Nigeria,566,102356,0.01,0,Guess,1023
-Niue,570,102356,0.01,0,Guess,1023
-Norfolk Island,574,102356,0.01,0,Guess,1023
-Northern Mariana Islands,580,34958,0.01,0,Guess,349
-Norway,578,34958,0.8,0,Guess,27966
-Oman,512,180000,0.01,0,Guess,1800
-Pakistan,586,364870,0.01,0,Guess,3648
-Palau,585,34958,0.01,0,Guess,349
-Palestine State of,275,8837,0.01,0,Guess,88
+Monaco,492,6378267,0.01,0,Guess,0
+Mongolia,496,3635489,0.01,0,Guess,0
+Moldova (Republic of),498,3635489,0.01,0,Guess,0
+Montenegro,499,4422,0.01,0,Guess,0
+Montserrat,500,4422,0.01,0,Guess,0
+Morocco,504,180000,0.01,0,Guess,0
+Mozambique,508,180000,0.01,0,Guess,0
+Oman,512,180000,0.01,0,Guess,0
+Namibia,516,45533,0.01,0,Guess,0
+Nauru,520,45533,0.01,0,Guess,0
+Nepal,524,45533,0.01,0,Guess,0
+Netherlands,528,139804,0.8,0,Guess,0
+Curaçao,531,139804,0.01,0,Guess,0
+Aruba,533,,0.01,0,Guess,0
+Sint Maarten (Dutch part),534,,0.01,0,Guess,0
+Bonaire Sint Eustatius and Saba,535,,0.01,0,Guess,0
+New Caledonia,540,11250,0.01,0,Guess,0
+Vanuatu,548,7169,0.01,0,Guess,0
+New Zealand,554,48801,0.01,0,Guess,0
+Nicaragua,558,268358,0.01,0,Guess,0
+Niger,562,248200,0.01,0,Guess,0
+Nigeria,566,102356,0.01,0,Guess,0
+Niue,570,102356,0.01,0,Guess,0
+Norfolk Island,574,102356,0.01,0,Guess,0
+Norway,578,34958,0.8,0,Guess,0
+Northern Mariana Islands,580,34958,0.01,0,Guess,0
+United States Minor Outlying Islands,581,34958,0.01,0,Guess,0
+Micronesia (Federated States of),583,34958,0.01,0,Guess,0
+Marshall Islands,584,34958,0.01,0,Guess,0
+Palau,585,34958,0.01,0,Guess,0
+Pakistan,586,364870,0.01,0,Guess,0
 Panama,591,106687,0.01,0,Guess,1066
-Papua New Guinea,598,2048,0.01,0,Guess,20
-Paraguay,600,275371,0.01,0,Guess,2753
-Peru,604,749032,0.01,0,Guess,7490
-Philippines,608,246271,0.01,0,Guess,2462
-Pitcairn,612,246271,0.01,0,Guess,2462
-Poland,616,188528,0.8,0,Guess,150822
-Portugal,620,37000,0.01,0,Guess,370
-Puerto Rico,630,5848,0.01,0,Guess,58
-Qatar,634,39429,0.01,0,Guess,394
-Réunion,638,382,0.01,0,Guess,3
-Romania,642,503466,0.8,0,Guess,402772
-Russian Federation,643,1374210,0.01,0,Guess,13742
-Rwanda,646,1374210,0.01,0,Guess,13742
-Saint Barthelemy,652,1374210,0.01,0,Guess,13742
+Papua New Guinea,598,2048,0.01,0,Guess,0
+Paraguay,600,275371,0.01,0,Guess,0
+Peru,604,749032,0.01,0,Guess,0
+Philippines,608,246271,0.01,0,Guess,0
+Pitcairn,612,246271,0.01,0,Guess,0
+Poland,616,188528,0.8,0,Guess,0
+Portugal,620,37000,0.01,0,Guess,0
+Guinea-Bissau,624,2426,0.01,0,Guess,0
+Timor-Leste,626,52143,0.01,0,Guess,0
+Puerto Rico,630,5848,0.01,0,Guess,0
+Qatar,634,39429,0.01,0,Guess,0
+Réunion,638,382,0.01,0,Guess,0
+Romania,642,503466,0.8,0,Guess,0
+Russian Federation,643,1374210,0.01,0,Guess,0
+Rwanda,646,1374210,0.01,0,Guess,0
+Saint Barthelemy,652,1374210,0.01,0,Guess,0
 Saint Helena and Ascension and Tristan da Cunha,654,0,0.01,0,Guess,0
 Saint Kitts and Nevis,659,0,0.01,0,Guess,0
-Saint Lucia,662,1116,0.01,0,Guess,11
-Saint Martin (French part),663,1116,0.01,0,Guess,11
+Anguilla,660,0,0.01,0,Guess,0
+Saint Lucia,662,1116,0.01,0,Guess,0
+Saint Martin (French part),663,1116,0.01,0,Guess,0
 Saint Pierre and Miquelon,666,,0.01,0,Guess,0
 Saint Vincent and the Grenadines,670,,0.01,0,Guess,0
-Samoa,882,1927,0.01,0,Guess,19
 San Marino,674,,0.01,0,Guess,0
-Sao Tome and Principe,678,296,0.01,0,Guess,2
-Saudi Arabia,682,33731,0.8,0,Guess,26984
-Senegal,686,549880,0.01,0,Guess,5498
-Serbia,688,15337,0.01,0,Guess,153
-Seychelles,690,15337,0.01,0,Guess,153
-Sierra Leone,694,436036,0.01,0,Guess,4360
-Singapore,702,436036,0.01,0,Guess,4360
-Sint Maarten (Dutch part),534,,0.01,0,Guess,0
-Slovakia,703,6866,0.8,0,Guess,5492
-Slovenia,705,22954,0.8,0,Guess,18363
-Solomon Islands,90,152,0.01,0,Guess,1
-Somalia,706,889,0.01,0,Guess,8
-South Africa,710,320787,0.8,0,Guess,256629
-South Georgia and the South Sandwich Islands,239,1157,0.01,0,Guess,11
-South Sudan,728,,0.01,0,Guess,0
-Spain,724,293449,0.8,0,Guess,234759
-Sri Lanka,144,1379,0.01,0,Guess,13
-Sudan,729,790086,0.01,0,Guess,7900
-Suriname,740,279,0.01,0,Guess,2
-Svalbard and Jan Mayen,744,279,0.01,0,Guess,2
-Swaziland,748,1673,0.01,0,Guess,16
-Sweden,752,101247,0.9,0,Guess,91122
-Switzerland,756,55662,0.01,0,Guess,556
-Syrian Arab Republic,760,13692,0.01,0,Guess,136
-Taiwan Province of China,158,5910792,0.01,0,Guess,59107
-Tajikistan,762,78765,0.01,0,Guess,787
-"Tanzania, United Republic of",834,75663,0.01,0,Guess,756
-Thailand,764,19263,0.01,0,Guess,192
-Timor-Leste,626,52143,0.01,0,Guess,521
-Togo,768,1814,0.01,0,Guess,18
-Tokelau,772,1814,0.01,0,Guess,18
-Tonga,776,11874,0.01,0,Guess,118
-Trinidad and Tobago,780,1435,0.01,0,Guess,14
-Tunisia,788,57281,0.01,0,Guess,572
-Turkey,792,122704,0.01,0,Guess,1227
-Turkmenistan,795,25975,0.01,0,Guess,259
-Turks and Caicos Islands,796,25975,0.01,0,Guess,259
-Tuvalu,798,25975,0.01,0,Guess,259
-Uganda,800,25975,0.01,0,Guess,259
-Ukraine,804,305800,0.8,0,Guess,244640
-United Arab Emirates,784,417898,0.01,0,Guess,4178
-UK,826,75663,0.8,0,Guess,60530
-USA,840,10525766,0.8,0,Guess,8420612
-United States Minor Outlying Islands,581,34958,0.01,0,Guess,349
-Uruguay,858,415000,0.01,0,Guess,4150
-Uzbekistan,860,216900,0.01,0,Guess,2169
-Vanuatu,548,7169,0.01,0,Guess,71
-Venezuela (Bolivarian Republic of),862,527031,0.01,0,Guess,5270
-Viet Nam,704,54117,0.01,0,Guess,541
-Virgin Islands (British),92,152,0.01,0,Guess,1
-Virgin Islands (U.S.),850,10525766,0.01,0,Guess,105257
-Wallis and Futuna,876,175,0.01,0,Guess,1
-Western Sahara,732,790086,0.01,0,Guess,7900
-Yemen,887,1961,0.01,0,Guess,19
-Zambia,894,1961,0.01,0,Guess,19
+Sao Tome and Principe,678,296,0.01,0,Guess,0
+Saudi Arabia,682,33731,0.8,0,Guess,0
+Senegal,686,549880,0.01,0,Guess,0
+Serbia,688,15337,0.01,0,Guess,0
+Seychelles,690,15337,0.01,0,Guess,0
+Sierra Leone,694,436036,0.01,0,Guess,0
+Singapore,702,436036,0.01,0,Guess,0
+Slovakia,703,6866,0.8,0,Guess,0
+Viet Nam,704,54117,0.01,0,Guess,0
+Slovenia,705,22954,0.8,0,Guess,0
+Somalia,706,889,0.01,0,Guess,0
+South Africa,710,320787,0.8,0,Guess,0
 Zimbabwe,716,28219,0.01,0,Guess,282
+Spain,724,293449,0.8,0,Guess,0
+South Sudan,728,,0.01,0,Guess,0
+Sudan,729,790086,0.01,0,Guess,0
+Western Sahara,732,790086,0.01,0,Guess,0
+Suriname,740,279,0.01,0,Guess,0
+Svalbard and Jan Mayen,744,279,0.01,0,Guess,0
+Swaziland,748,1673,0.01,0,Guess,0
+Sweden,752,101247,0.9,0,Guess,0
+Switzerland,756,55662,0.01,0,Guess,0
+Syrian Arab Republic,760,13692,0.01,0,Guess,0
+Tajikistan,762,78765,0.01,0,Guess,0
+Thailand,764,19263,0.01,0,Guess,0
+Togo,768,1814,0.01,0,Guess,0
+Tokelau,772,1814,0.01,0,Guess,0
+Tonga,776,11874,0.01,0,Guess,0
+Trinidad and Tobago,780,1435,0.01,0,Guess,0
+United Arab Emirates,784,417898,0.01,0,Guess,0
+Tunisia,788,57281,0.01,0,Guess,0
+Turkey,792,122704,0.01,0,Guess,0
+Turkmenistan,795,25975,0.01,0,Guess,0
+Turks and Caicos Islands,796,25975,0.01,0,Guess,0
+Tuvalu,798,25975,0.01,0,Guess,0
+Uganda,800,25975,0.01,0,Guess,0
+Ukraine,804,305800,0.8,0,Guess,0
+Macedonia (the former Yugoslav Republic of),807,305800,0.01,0,Guess,0
+Egypt,818,75663,0.01,0,Guess,0
+UK,826,75663,0.8,0,Guess,60530
+Guernsey,831,75663,0.8,0,Guess,0
+Jersey,832,75663,0.01,0,Guess,0
+Isle of Man,833,75663,0.01,0,Guess,0
+"Tanzania, United Republic of",834,75663,0.01,0,Guess,0
+USA,840,10525766,0.8,0,Guess,8420612
+Virgin Islands (U.S.),850,10525766,0.01,0,Guess,0
+Burkina Faso,854,41053,0.01,0,Guess,0
+Uruguay,858,415000,0.01,0,Guess,0
+Uzbekistan,860,216900,0.01,0,Guess,0
+Venezuela (Bolivarian Republic of),862,527031,0.01,0,Guess,0
+Wallis and Futuna,876,175,0.01,0,Guess,0
+Samoa,882,1927,0.01,0,Guess,0
+Yemen,887,1961,0.01,0,Guess,0
+Zambia,894,1961,0.01,0,Guess,0

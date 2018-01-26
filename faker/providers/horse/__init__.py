@@ -7,7 +7,7 @@ from faker.utils.distribution import choice_distribution
 from random import randint
 import calendar, random
 import csv
-
+import os
 
 class Provider(BaseProvider):
     """
@@ -33,6 +33,7 @@ class Provider(BaseProvider):
     # TODO: extend range of colours
     COLORS = ["bay", "chestnut", "black", "grey"]
 
+    data_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data')
     pios = {}
     pios_distribution = {}
     population = []
@@ -43,22 +44,21 @@ class Provider(BaseProvider):
 
         super().__init__(object)
         # load csv files
-        import os
-        dir_path = os.path.dirname(os.path.realpath(__file__))
-        cwd = os.getcwd()
+
+
         # get list of countries and population
-        csv_file = os.path.join(dir_path,'data/HorsePop.csv' )
+        csv_file = os.path.join(self.data_dir,'HorsePop.csv' )
         with open(csv_file, 'rt') as csvfile:
             # country,iso3166,population,pct_registered,confidence in pct_reg,source of pct_reg,pick_pct
             items = csv.DictReader(csvfile, delimiter=',')
             for item in items:
-                self.population.append(item['iso3166'])
-                self.population_distribution.append(int(item['pick_pct']))
+                if int(item['pick']) > 0:
+                    self.population.append(item['iso3166'])
+                    self.population_distribution.append(int(item['pick']))
 
         # get list of pios by country and numbers per org
-        csv_file = os.path.join(dir_path, 'data/PIOs.csv')
+        csv_file = os.path.join(self.data_dir,'PIOs.csv' )
         with open(csv_file, 'rt') as csvfile:
-
             # name,full_org_id,country, org_id,num_reg,source_of_num_reg
             items = csv.DictReader(csvfile, delimiter=',')
             for item in items:
@@ -69,7 +69,8 @@ class Provider(BaseProvider):
                     self.pios[item['country']] = [item['org_id'],]
                     self.pios_distribution[item['country']] = [int(item['num_reg']),]
 
-        csv_file = os.path.join(dir_path,'data/horse_handles.csv' )
+
+        csv_file = os.path.join(self.data_dir,'horse_handles.csv' )
         with open(csv_file, 'rt') as csvfile:
             # one name per line
             items = csv.reader(csvfile, )
@@ -77,7 +78,6 @@ class Provider(BaseProvider):
                 self.handles.append(item[0])
 
 
-    #list(set(seq))
     def simple_horse(self):
         """
         Generates a basic profile with horse informations

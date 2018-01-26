@@ -1,0 +1,5 @@
+The data in these files is incomplete and inacurate.
+
+PIOs is incomplete, many countries have no PIO and for those countries the pick value in HorsePop is set to 0.
+
+HorsePop
