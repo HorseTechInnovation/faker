@@ -11,7 +11,7 @@ with io.open(os.path.join(here, 'README.rst'), encoding='utf-8') as fp:
     README = fp.read()
 
 
-version = '0.8.8'
+version = '0.8.10'
 
 # this module can be zip-safe if the zipimporter implements iter_modules or if
 # pkgutil.iter_importer_modules has registered a dispatch for the zipimporter.
@@ -59,6 +59,7 @@ setup(
     platforms=["any"],
     test_suite='tests',
     zip_safe=zip_safe,
+    python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
     install_requires=[
         "python-dateutil>=2.4",
         "six",
