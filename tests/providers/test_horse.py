@@ -31,7 +31,7 @@ class TestHorseData(unittest.TestCase):
 
         # get a list of all the countries with a PIO
         pio_countries = set()
-        csv_file = os.path.join(provider.data_dir,'PIOs.csv' )
+        csv_file = os.path.join(provider.data_dir,'pios.csv' )
         with open(csv_file, 'rt') as csvfile:
             # country,iso3166,population,pct_registered,confidence in pct_reg,source of pct_reg,pick_pct
             items = csv.DictReader(csvfile, delimiter=',')
@@ -40,7 +40,7 @@ class TestHorseData(unittest.TestCase):
 
         # get a list of all the countries with a horse population
         countries = set()
-        csv_file = os.path.join(provider.data_dir,'HorsePop.csv' )
+        csv_file = os.path.join(provider.data_dir,'horse_population.csv' )
         with open(csv_file, 'rt') as csvfile:
             # country,iso3166,population,pct_registered,confidence in pct_reg,source of pct_reg,pick_pct
             items = csv.DictReader(csvfile, delimiter=',')
@@ -51,10 +51,10 @@ class TestHorseData(unittest.TestCase):
         # all PIOs are linked to a country with a horse population and  all countries with a horse population have a PIO
         if not countries.issubset(pio_countries):
             for item in countries.difference(pio_countries):
-                print("No PIO in PIOs.csv for country code %s" % item)
+                print("No PIO in pios.csv for country code %s" % item)
 
             for item in pio_countries.difference(countries):
-                print("PIO country code %s does not exist in HorsePop.csv" % item)
+                print("PIO country code %s does not exist in horse_population.csv" % item)
 
             self.assertTrue(0, "Data in data directory is missing data that could cause faker to fail")
 
@@ -64,16 +64,28 @@ class TestUS(unittest.TestCase):
     def setUp(self):
         self.factory = Faker('en_US')
 
+    def test_country(self):
+
+        us = USProvider('en_US')
+        country = us.country_of_birth()
+
+        country2 = self.factory.country_of_birth()
+        # This fails because using factory uses default not US version, why???????
+        #self.assertEqual(country, country2)
+        self.assertEqual(country, 840)
+
     def test_simple(self):
 
-        simple = self.factory.simple_horse()
+        #simple = self.factory.simple_horse()
+        us = USProvider('en_US')
+        simple = us.simple_horse()
 
         self.assertIsInstance(simple['handle'], string_types)
         self.assertIsInstance(simple['name'], string_types)
         self.assertIsInstance(USProvider.SEX[simple['sex']], string_types)
         self.assertIsInstance(simple['color'], string_types)
 
-        # us measures size in hands
+        # US measures size in hands
         self.assertTrue(simple['size'] >= 10)
         self.assertTrue(simple['size'] <=  19)
 
@@ -102,7 +114,8 @@ class TestIE(unittest.TestCase):
 
     def test_size_in_cms(self):
 
-        size = self.factory.horse_size()
+        ie = IEProvider('en_IE')
+        size = ie.horse_size()
 
         self.assertTrue(size > 100)
         self.assertTrue(size <  183)

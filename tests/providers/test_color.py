@@ -43,3 +43,4 @@ class TestColor(unittest.TestCase):
 
         assert maxval <= 255
         assert minval >= 0
+

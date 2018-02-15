@@ -4,9 +4,10 @@ from .. import Provider as HorseProvider
 class Provider(HorseProvider):
 
     country_codes = [840,]
+    UNITS = 'hands'   # horses measured in hands or cms?
 
     def __init__(self, object):
-        country_codes = [840, ]
+        self.country_codes = [840, ]
         super().__init__(object)
 
 
@@ -14,6 +15,3 @@ class Provider(HorseProvider):
         return 840
 
 
-    def horse_size(self):
-
-        return super().horse_size('hands')

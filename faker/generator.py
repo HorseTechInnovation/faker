@@ -38,6 +38,7 @@ class Generator(object):
             if hasattr(faker_function, '__call__') or \
                     isinstance(faker_function, (classmethod, staticmethod)):
                 # add all faker method to generator
+
                 self.set_formatter(method_name, faker_function)
 
     def provider(self, name):

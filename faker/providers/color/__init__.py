@@ -157,6 +157,9 @@ class Provider(BaseProvider):
         'gray', 'yellow', 'fuchsia', 'aqua', 'white',
     )
 
+    def color_count(self):
+        return len(self.all_colors)
+
     def color_name(self):
         return self.random_element(self.all_colors.keys())
 

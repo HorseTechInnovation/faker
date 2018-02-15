@@ -1,0 +1,23 @@
+The data in these files is incomplete and inacurate.
+
+PIOs is incomplete, many countries have no PIO and for those countries the pick value in HorsePop is set to 0.
+
+    faker
+          [-l {bg_BG,cs_CZ,...,zh_CN,zh_TW}]
+          [-r REPEAT] [-s SEP]
+          [-i {package.containing.custom_provider otherpkg.containing.custom_provider}]
+          [fake] [fake argument [fake argument ...]]
+https://semaphoreci.com/community/tutorials/generating-fake-data-for-python-unit-tests-with-faker
+
+
+To generate three horses from US (default locale)
+$ python -m faker -r=3 -s="" simple_horse
+
+{'handle': 'TealFlyAway', 'name': 'Teal Fly Away', 'sex': 21, 'color': 'chestnut', 'size': 155, 'dob': datetime.date(2010, 3, 13), 'chipid': '177932414', 'country_of_birth': '840', 'ueln': '840-016-319997684'}
+{'handle': 'BlackLinguini', 'name': 'Black Linguini', 'sex': 21, 'color': 'bay', 'size': 168, 'dob': datetime.date(1994, 4, 6), 'chipid': '', 'country_of_birth': '840', 'ueln': '840-042-13742256'}
+{'handle': 'SilverMickey', 'name': 'Silver Mickey', 'sex': 30, 'color': 'skewbald', 'size': 149, 'dob': datetime.date(1995, 1, 8), 'chipid': '', 'country_of_birth': '840', 'ueln': '840-028-824420101'}
+
+To generate one horses from Ireland
+
+$ python -m faker -l en_IE simple_horse
+{'handle': 'YellowDrakkar', 'name': 'Yellow Drakkar', 'sex': 21, 'color': 'chestnut', 'size': 150, 'dob': datetime.date(2016, 6, 16), 'chipid': '908311522', 'country_of_birth': '250', 'ueln': '250-FR-368237702'}

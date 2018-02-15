@@ -11,12 +11,12 @@ import os
 
 class Provider(BaseProvider):
     """
-    This provider is a collection of functions to generate personal profiles and identities.
+    This provider is a collection of functions to generate data related to horses.
 
     """
     # standard settings - may be modified by country
     '''
-        Horse Seix
+        Horse Sex
         Many male horses are gelded/neutered, so the code for sex includes this option.  Rarely a female horse can also be neutered. 
     '''
 
@@ -30,10 +30,17 @@ class Provider(BaseProvider):
         22 : "Neutered female",
         30 : "Hermaphrodite",
     }
-    # TODO: extend range of colours
-    COLORS = ["bay", "chestnut", "black", "grey"]
+    SEX_PROPORTIONS = (0.05,0.05, 0.4, 0.05, 0.01, 0.4, 0.01, 0.01)
 
-    data_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data')
+    # TODO: extend range of colours
+    # these are the base colours used by the FEI: http://inside.fei.org/system/files/ID_of_horses_2014.pdf
+
+    COLORS = ["brown","bay", "chestnut", "black", "grey", "strawberry", "piebald", "skewbald", "dun", "cream", "palomino", "appaloosa"]
+    COLOURS_PROPORTIONS = (5,50,30,5,10,1,1,1,1,1,1,1)
+
+    UNITS = "cms"
+
+    data_dir = os.path.dirname(os.path.realpath(__file__))
     pios = {}
     pios_distribution = {}
     population = []
@@ -47,7 +54,7 @@ class Provider(BaseProvider):
 
 
         # get list of countries and population
-        csv_file = os.path.join(self.data_dir,'HorsePop.csv' )
+        csv_file = os.path.join(self.data_dir, 'horse_population.csv' )
         with open(csv_file, 'rt') as csvfile:
             # country,iso3166,population,pct_registered,confidence in pct_reg,source of pct_reg,pick_pct
             items = csv.DictReader(csvfile, delimiter=',')
@@ -56,8 +63,8 @@ class Provider(BaseProvider):
                     self.population.append(item['iso3166'])
                     self.population_distribution.append(int(item['pick']))
 
-        # get list of pios by country and numbers per org
-        csv_file = os.path.join(self.data_dir,'PIOs.csv' )
+        # get list of Passport Issuing Authorities (PIOs) by country and numbers per PIO
+        csv_file = os.path.join(self.data_dir,'pios.csv' )
         with open(csv_file, 'rt') as csvfile:
             # name,full_org_id,country, org_id,num_reg,source_of_num_reg
             items = csv.DictReader(csvfile, delimiter=',')
@@ -83,21 +90,15 @@ class Provider(BaseProvider):
         Generates a basic profile with horse informations
 
         """
-        sex = self.generator.horse_sex()
-
-
-        # TODO: generate horse names
-        if sex >= 20:
-            name = self.generator.name_female()
-        else:
-            name = self.generator.name_male()
+        name = self.generator.horse_name()
+        handle = self.generator.horse_handle(name)
 
         country = self.generator.country_of_birth()
 
         return {
-            "handle": self.generator.handle(),
+            "handle": handle,
             "name": name,
-            "sex": sex,
+            "sex": self.generator.horse_sex(),
             "color": self.generator.horse_color(),
             "size": self.generator.horse_size(),
             "dob": self.generator.horse_dob(),
@@ -105,6 +106,23 @@ class Provider(BaseProvider):
             "country_of_birth": country,
             "ueln": self.generator.ueln(country),
         }
+
+    def horse_handle(self, name=None):
+        '''handle is a short unique name, like a twitter handle.  In real life a horse might be called
+        Cooragannive Diamond Star but have a short name of Blackie.  For the sake of tests, the handle
+        is just the name with spaces removed.'''
+        if name:
+            return name.replace(" ",'')
+        else:
+            return random.choice(self.handles)
+
+
+    def horse_name(self):
+
+        color = self.generator.safe_color_name()
+        handle = random.choice(self.handles)
+
+        return "%s %s" % (color.title(), handle)
 
     def horse_sex(self):
         '''
@@ -123,17 +141,14 @@ class Provider(BaseProvider):
         '''
 
         sex_choices = list(self.SEX.keys())
-        p = (0.05,0.05, 0.4, 0.05, 0.01, 0.4, 0.01, 0.01)
 
-        return choice_distribution(sex_choices, p)
+        return choice_distribution(sex_choices, self.SEX_PROPORTIONS)
 
     def horse_color(self):
         #https://en.wikipedia.org/wiki/Equine_coat_color
         #http://www.animalgenetics.us/Equine/CCalculator1.asp
 
-        p = [0.5, 0.3, 0.1, 0.1]
-
-        return choice_distribution(self.COLORS, p)
+        return choice_distribution(self.COLORS, self.COLOURS_PROPORTIONS)
 
     def horse_size(self, units = 'cms'):
         '''horses are measured in hands (4 inches per hand) or centimeters depending on country'''
@@ -142,14 +157,12 @@ class Provider(BaseProvider):
         #TODO: raise error if units is not cms or hands
 
         size_in_cms = random.choice([s for s in range(101, 182)])
-        if units == 'hands':
+        if self.UNITS == 'hands':
             hands = int(size_in_cms/2.54) + abs(size_in_cms/2.54)
             return hands
         else:
             return size_in_cms
 
-    def handle(self):
-        return random.choice(self.handles)
 
     def horse_dob(self):
         this_year = date.today().year
