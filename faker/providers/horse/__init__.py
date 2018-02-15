@@ -9,6 +9,9 @@ import calendar, random
 import csv
 import os
 
+from .data import HORSE_HANDLES, PIOS, COUNTRY_POPULATION
+
+
 class Provider(BaseProvider):
     """
     This provider is a collection of functions to generate data related to horses.
@@ -54,21 +57,14 @@ class Provider(BaseProvider):
 
 
         # get list of countries and population
-        csv_file = os.path.join(self.data_dir, 'horse_population.csv' )
-        with open(csv_file, 'rt') as csvfile:
-            # country,iso3166,population,pct_registered,confidence in pct_reg,source of pct_reg,pick_pct
-            items = csv.DictReader(csvfile, delimiter=',')
-            for item in items:
+        for item in COUNTRY_POPULATION:
                 if int(item['pick']) > 0:
                     self.population.append(item['iso3166'])
                     self.population_distribution.append(int(item['pick']))
 
         # get list of Passport Issuing Authorities (PIOs) by country and numbers per PIO
-        csv_file = os.path.join(self.data_dir,'pios.csv' )
-        with open(csv_file, 'rt') as csvfile:
-            # name,full_org_id,country, org_id,num_reg,source_of_num_reg
-            items = csv.DictReader(csvfile, delimiter=',')
-            for item in items:
+
+        for item in PIOS:
                 if item['country'] in self.pios.keys():
                     self.pios[item['country']].append(item['org_id'])
                     self.pios_distribution[item['country']].append(int(item['num_reg']))
@@ -77,12 +73,9 @@ class Provider(BaseProvider):
                     self.pios_distribution[item['country']] = [int(item['num_reg']),]
 
 
-        csv_file = os.path.join(self.data_dir,'horse_handles.csv' )
-        with open(csv_file, 'rt') as csvfile:
-            # one name per line
-            items = csv.reader(csvfile, )
-            for item in items:
-                self.handles.append(item[0])
+
+        # get possible names
+        self.handles = HORSE_HANDLES
 
 
     def simple_horse(self):
