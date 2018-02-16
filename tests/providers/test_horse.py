@@ -15,9 +15,10 @@ from faker.factory import Factory
 
 
 from tests import string_types
-from datetime import date
+from datetime import date, datetime
 from dateutil.relativedelta import relativedelta
 
+from faker.providers.horse.data import HORSE_HANDLES, PIOS, COUNTRY_POPULATION
 
 class TestHorseData(unittest.TestCase):
     """check the data in the data folder"""
@@ -31,20 +32,12 @@ class TestHorseData(unittest.TestCase):
 
         # get a list of all the countries with a PIO
         pio_countries = set()
-        csv_file = os.path.join(provider.data_dir,'pios.csv' )
-        with open(csv_file, 'rt') as csvfile:
-            # country,iso3166,population,pct_registered,confidence in pct_reg,source of pct_reg,pick_pct
-            items = csv.DictReader(csvfile, delimiter=',')
-            for item in items:
+        for item in PIOS:
                     pio_countries.add(item['country'])
 
         # get a list of all the countries with a horse population
         countries = set()
-        csv_file = os.path.join(provider.data_dir,'horse_population.csv' )
-        with open(csv_file, 'rt') as csvfile:
-            # country,iso3166,population,pct_registered,confidence in pct_reg,source of pct_reg,pick_pct
-            items = csv.DictReader(csvfile, delimiter=',')
-            for item in items:
+        for item in COUNTRY_POPULATION:
                 if int(item['pick']) > 0:
                     countries.add(item['iso3166'])
 
@@ -64,6 +57,16 @@ class TestUS(unittest.TestCase):
     def setUp(self):
         self.factory = Faker('en_US')
 
+    def test_dob(self):
+        '''check that date of birth of horse (assumes horse is alive) will return a reasonable date'''
+        provider = USProvider('en_US')
+
+        dob = datetime.strptime(provider.horse_dob(),"%Y-%m-%d")
+
+        years_old = date.today().year - dob.year
+
+        self.assertTrue(years_old < 40)
+
     def test_country(self):
 
         us = USProvider('en_US')
@@ -76,9 +79,9 @@ class TestUS(unittest.TestCase):
 
     def test_simple(self):
 
-        #simple = self.factory.simple_horse()
-        us = USProvider('en_US')
-        simple = us.simple_horse()
+        simple = self.factory.simple_horse()
+        # us = USProvider('en_US')
+        # simple = us.simple_horse()
 
         self.assertIsInstance(simple['handle'], string_types)
         self.assertIsInstance(simple['name'], string_types)
@@ -119,3 +122,4 @@ class TestIE(unittest.TestCase):
 
         self.assertTrue(size > 100)
         self.assertTrue(size <  183)
+

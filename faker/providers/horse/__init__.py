@@ -2,7 +2,7 @@
 
 from .. import BaseProvider
 import itertools
-from datetime import date
+from datetime import date, datetime
 from faker.utils.distribution import choice_distribution
 from random import randint
 import calendar, random
@@ -158,6 +158,8 @@ class Provider(BaseProvider):
 
 
     def horse_dob(self):
+        '''get a date of birth for a live horse, assuming horses live up to 40 years but distribution favours
+        younger horses'''
         this_year = date.today().year
         years = [y for y in range(this_year, this_year-40, -1)]
 
@@ -167,18 +169,22 @@ class Provider(BaseProvider):
              0.01,0.01,0.01,0.01,0.01,0.01,0.01, 0.005, 0.005, 0.005,
              0.001, 0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001]
 
-
+        # get a year - distributed around average horse age
         year = choice_distribution(years, p)
 
-
+        # get a month - in northern hemisphere most horses are born in spring
+        #TODO: handle date of birth for southern hemisphere
         months = [m for m in range(1, 13)]
-        # in northern hemisphere most horses are born in spring
         p = [0.2, 0.2, 0.2, 0.2, 0.1, 0.5, 0.2, 0.1, 0.01, 0.01, 0.01, 0.01]
         month = choice_distribution(months, p)
 
+        # get day of birth
         dates = calendar.Calendar().itermonthdates(year, month)
-        return random.choice([date for date in dates if date.month == month])
 
+        dob = random.choice([date for date in dates if date.month == month])
+
+        # return in format YYYY-MM-DD
+        return str(dob)
 
 
     def ueln(self, country):
