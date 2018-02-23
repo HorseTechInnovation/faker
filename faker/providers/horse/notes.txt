@@ -1,3 +1,29 @@
+Faker Understanding
+-------------------
+
+Creating an instance of the faker factory like this::
+
+    factory = Faker()
+
+Loads up the factory class with all the methods for all the providers such that if you now call::
+
+    factory.word()
+
+It will identify the provider class text and calls the default word method.
+The default locale is en_US  (And if creating a new provider must have en_US?)
+If you create the factory with another locale, then it will look for the method you want in that locale and fall back to en_US and if there is no method in en_US, then it will fall back to the one in __init__
+
+? If there are competing methods in diferenc eproviders
+
+
+
+Faker Questions
+---------------
+? What happens if
+
+Horse Faker
+-------------
+
 The data in these files is incomplete and inacurate.
 
 PIOs is incomplete, many countries have no PIO and for those countries the pick value in HorsePop is set to 0.

@@ -9,7 +9,7 @@ import calendar, random
 import csv
 import os
 
-from .data import HORSE_HANDLES, PIOS, COUNTRY_POPULATION
+from .data import HORSE_HANDLES, PIOS, COUNTRY_POPULATION, HORSE_IMAGE_URLS
 
 
 class Provider(BaseProvider):
@@ -98,6 +98,7 @@ class Provider(BaseProvider):
             "chipid": self.generator.chipid(),
             "country_of_birth": country,
             "ueln": self.generator.ueln(country),
+            "image_url": self.generator.horse_pic(),
         }
 
     def horse_handle(self, name=None):
@@ -216,3 +217,7 @@ class Provider(BaseProvider):
 
         return choice_distribution(self.population, self.population_distribution)
 
+    def horse_pic(self):
+        '''get image url from a list '''
+
+        return random.choice(HORSE_IMAGE_URLS)
