@@ -10,16 +10,21 @@ Loads up the factory class with all the methods for all the providers such that 
     factory.word()
 
 It will identify the provider class text and calls the default word method.
-The default locale is en_US  (And if creating a new provider must have en_US?)
+The default locale is en_US  (And if creating a new provider must have en_US)
 If you create the factory with another locale, then it will look for the method you want in that locale and fall back to en_US and if there is no method in en_US, then it will fall back to the one in __init__
 
-? If there are competing methods in diferenc eproviders
+
+Using Faker
+-----------
+    faker
+          [-l {bg_BG,cs_CZ,...,zh_CN,zh_TW}]
+          [-r REPEAT] [-s SEP]
+          [-i {package.containing.custom_provider otherpkg.containing.custom_provider}]
+          [fake] [fake argument [fake argument ...]]
 
 
+https://semaphoreci.com/community/tutorials/generating-fake-data-for-python-unit-tests-with-faker
 
-Faker Questions
----------------
-? What happens if
 
 Horse Faker
 -------------
@@ -28,12 +33,7 @@ The data in these files is incomplete and inacurate.
 
 PIOs is incomplete, many countries have no PIO and for those countries the pick value in HorsePop is set to 0.
 
-    faker
-          [-l {bg_BG,cs_CZ,...,zh_CN,zh_TW}]
-          [-r REPEAT] [-s SEP]
-          [-i {package.containing.custom_provider otherpkg.containing.custom_provider}]
-          [fake] [fake argument [fake argument ...]]
-https://semaphoreci.com/community/tutorials/generating-fake-data-for-python-unit-tests-with-faker
+
 
 
 To generate three horses from US (default locale)

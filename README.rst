@@ -5,6 +5,30 @@ a production service, Faker is for you.
 
 Faker is heavily inspired by `PHP Faker`_, `Perl Faker`_, and by `Ruby Faker`_.
 
+Horses
+-------
+
+This fork has a provider for horse added to generate data for applications that require test data for horses.
+
+To use from the command line:
+
+To generate three horses from US (default locale)
+$ python -m faker -r=3 -s="" simple_horse
+
+{'handle': 'TealFlyAway', 'name': 'Teal Fly Away', 'sex': 21, 'color': 'chestnut', 'size': 155, 'dob': datetime.date(2010, 3, 13), 'chipid': '177932414', 'country_of_birth': '840', 'ueln': '840-016-319997684'}
+{'handle': 'BlackLinguini', 'name': 'Black Linguini', 'sex': 21, 'color': 'bay', 'size': 168, 'dob': datetime.date(1994, 4, 6), 'chipid': '', 'country_of_birth': '840', 'ueln': '840-042-13742256'}
+{'handle': 'SilverMickey', 'name': 'Silver Mickey', 'sex': 30, 'color': 'skewbald', 'size': 149, 'dob': datetime.date(1995, 1, 8), 'chipid': '', 'country_of_birth': '840', 'ueln': '840-028-824420101'}
+
+To generate one horses from Ireland
+
+$ python -m faker -l en_IE simple_horse
+{'handle': 'YellowDrakkar', 'name': 'Yellow Drakk'}
+
+
+Can also be called from within python, see notes.txt in faker/providers/horse
+
+
+
 ----
 
 ::
